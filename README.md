@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# publications-react
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Redux application for managing publications.
 
-## Available Scripts
+A complete Single-Page-Application (SPA) created using React JavaScript library. The app uses Redux for state management and Bootstrap for styling the UI. It's also interacting with a RESTful API which is protected using JWT.
 
-In the project directory, you can run:
+## Setup and Installation
 
-### `yarn start`
+1. **Backend REST API Node server**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   As this React app is consuming a REST API, make sure the same is up and running on your system
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+   - the complete code is available [here](https://github.com/muntasir2165/publications-api) at GitHub
 
-### `yarn test`
+2. **Clone the React app repo from GitHub**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```sh
+   git clone https://github.com/muntasir2165/publications-react.git
+   ```
 
-### `yarn build`
+3. **Install npm dependencies**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```sh
+   cd publications-react
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Update configuration**
+   If the back-end API server is running locally, uncomment line 1 in `apiUrl.js` and comment out line 2. Otherwise, running the application as is will interact with the API currently deployed at [Heroku](https://publications-api.herokuapp.com)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```js
+   // export const API_URL = 'http://localhost:8080';
+   export const API_URL = 'https://publications-api.herokuapp.com';
+   ```
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. **Run npm start to start the application**
+   ```sh
+   npm start
+   ```
+   this runs the application at port 3000 and we can access from http://localhost:3000
