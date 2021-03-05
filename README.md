@@ -4,6 +4,9 @@ React Redux application for managing publications.
 
 A complete Single-Page-Application (SPA) created using React JavaScript library. The app uses Redux for state management and Bootstrap for styling the UI. It's also interacting with a RESTful API which is protected using JWT.
 
+## Deployed App at GitHub Pages
+https://muntasir2165.github.io/publications-react/
+
 ## Setup and Installation
 
 1. **Backend REST API Node server**
