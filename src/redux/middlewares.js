@@ -1,13 +1,13 @@
 import axios from 'axios';
 
 import * as constants from './constants';
+import { API_URL } from "./../apiUrl.js"
 import { logoutUser } from './actions/authActionCreators';
 
 export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
   if (action.type !== constants.API) return next(action);
 
   dispatch({ type: constants.TOGGLE_LOADER });
-  const BASE_URL = 'http://localhost:8080';
   const AUTH_TOKEN = getState().user.token;
   if (AUTH_TOKEN)
     axios.defaults.headers.common['Authorization'] = `Bearer ${AUTH_TOKEN}`;
@@ -22,7 +22,7 @@ export const apiMiddleware = ({ dispatch, getState }) => (next) => (action) => {
 
   axios({
     method,
-    url: BASE_URL + url,
+    url: API_URL + url,
     data: data ? data : null,
   })
     .then((response) => {
