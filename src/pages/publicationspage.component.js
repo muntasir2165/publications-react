@@ -18,10 +18,7 @@ const PublicationsPage = ({
   return (
     <React.Fragment>
       <div className='row my-5'>
-        <div className='col-10'>
-          <h2>All Publications</h2>
-        </div>
-        <div className='col-2'>
+        <div className='offset-10 col-2'>
           <Link to='/publication-createorupdate' className='btn btn-primary'>
             Create Publication | <i className='fas fa-plus' />
           </Link>
