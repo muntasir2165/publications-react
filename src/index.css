@@ -1,4 +1,9 @@
 .btn,
-.creation-date-display {
+.creation-date-display,
+th {
   white-space: nowrap;
+}
+
+.page-link {
+  min-width: 90px;
 }

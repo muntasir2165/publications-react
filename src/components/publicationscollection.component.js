@@ -3,9 +3,13 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 
+import Pagination from './pagination.component';
+
 import { deletePublicationById } from './../redux/actions/publicationsActionCreators';
 
 const PublicationsCollection = ({ publications, dispatchDeleteAction }) => {
+  const pageSize = 10;
+  const [pageNumber, setPageNumber] = useState(1);
   const [selectedPublication, setSelectedPublication] = useState('');
 
   const showConfirmationModal = (event, publicationId) => {
@@ -28,8 +32,21 @@ const PublicationsCollection = ({ publications, dispatchDeleteAction }) => {
     );
   };
 
+  const getPublicationsForCurrentPage = () =>
+    publications.slice(pageSize * (pageNumber - 1), pageSize * pageNumber);
+
+  const pageChange = (newPageNumber) => {
+    setPageNumber(newPageNumber);
+  };
+
   return (
     <React.Fragment>
+      <Pagination
+        page={pageNumber}
+        onPageChange={pageChange}
+        itemsPerPage={pageSize}
+        itemsTotal={publications.length}
+      />
       <table className='table table-hover'>
         <thead className='thead-dark'>
           <tr>
@@ -43,7 +60,7 @@ const PublicationsCollection = ({ publications, dispatchDeleteAction }) => {
           </tr>
         </thead>
         <tbody>
-          {publications.map((item) => (
+          {getPublicationsForCurrentPage().map((item) => (
             <tr key={item._id}>
               <td>
                 <Link to={`/publication-createorupdate/${item._id}`}>

@@ -37,45 +37,6 @@ const Header = ({ userName, isLoggedIn, onLogout }) => (
       </button>
     )}
   </nav>
-
-  // <nav className='navbar navbar-dark bg-dark'>
-  //   <div className='container-fluid'>
-  //     <Link className='navbar-brand' to='/'>
-  //       <div className='d-flex align-items-center'>
-  //         <i className='fas fa-book fa-2x'></i>
-  //         <span className='h4 pl-2'>Publications</span>
-  //       </div>
-  //     </Link>
-  //     <ul class='navbar-nav'>
-  //       <li class='nav-item active'>
-  //         <Link className='nav-link' to='/publication-listing'>
-  //           <span className='pl-2'>Listing</span>
-  //         </Link>
-  //       </li>
-  //       <li class='nav-item'>
-  //         <Link className='nav-link' to='/publication-trend'>
-  //           <span className='pl-2'>Trend</span>
-  //         </Link>
-  //       </li>
-  //     </ul>
-  //     {isLoggedIn && (
-  //       <h4 className='ml-auto mr-4'>
-  //         <span className='badge badge-pill badge-secondary text-capitalize'>
-  //           Welcome {userName} !
-  //         </span>
-  //       </h4>
-  //     )}
-  //     {isLoggedIn && (
-  //       <button
-  //         type='button'
-  //         onClick={onLogout}
-  //         className='btn btn-outline-warning'
-  //       >
-  //         Logout | <i className='fas fa-sign-out-alt' />
-  //       </button>
-  //     )}
-  //   </div>
-  // </nav>
 );
 
 export default Header;
