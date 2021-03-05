@@ -1,3 +1,4 @@
-.btn {
+.btn,
+.creation-date-display {
   white-space: nowrap;
 }
