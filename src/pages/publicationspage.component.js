@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import PublicationsCollection from '../components/publicationscollection.component';
+
 import { fetchAllPublications } from './../redux/actions/publicationsActionCreators';
 
 const PublicationsPage = ({
@@ -21,7 +22,7 @@ const PublicationsPage = ({
           <h2>All Publications</h2>
         </div>
         <div className='col-2'>
-          <Link to='/edit-publication' className='btn btn-primary'>
+          <Link to='/publication-createorupdate' className='btn btn-primary'>
             Create Publication | <i className='fas fa-plus' />
           </Link>
         </div>
@@ -32,14 +33,16 @@ const PublicationsPage = ({
           {publications.length > 0 ? (
             <PublicationsCollection publications={publications} />
           ) : (
-            <div className='text-center mt-5'>
-              <h2>
-                <i className='far fa-folder-open fa-3x' />
-              </h2>
-              <h1 className='text-center'>
-                There are no publications available
-              </h1>
-            </div>
+            !loading && (
+              <div className='text-center mt-5'>
+                <h2>
+                  <i className='far fa-folder-open fa-3x' />
+                </h2>
+                <h1 className='text-center'>
+                  There are no publications available
+                </h1>
+              </div>
+            )
           )}
         </div>
       </div>

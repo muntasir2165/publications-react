@@ -1,10 +1,12 @@
 import React from 'react';
+import { constant, range, times } from 'lodash';
+
 import Highcharts from 'highcharts/highstock';
 import HighchartsReact from 'highcharts-react-official';
-import { constant, range, times } from 'lodash';
+
 require('highcharts/modules/exporting')(Highcharts);
 
-const TotalPublicationTrend = ({ publications }) => {
+const PublicationTrend = ({ publications }) => {
   const getTotalPublicationByYear = (publicationType) => {
     const filteredPublications = publications.filter(
       (p) => p.publicationType === publicationType
@@ -97,4 +99,4 @@ const TotalPublicationTrend = ({ publications }) => {
   );
 };
 
-export default TotalPublicationTrend;
+export default PublicationTrend;

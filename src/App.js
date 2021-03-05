@@ -6,9 +6,12 @@ import { ToastContainer, Slide } from 'react-toastify';
 
 import AuthPage from './pages/authpage.component';
 import PublicationsPage from './pages/publicationspage.component';
+import PublicationTrendPage from './pages/publicationtrendpage.component';
 import EditPublicationPage from './pages/editpublicationpage.component';
+
 import Header from './components/header.component';
 import Spinner from './components/spinner/spinner.component';
+
 import { logoutUser } from './redux/actions/authActionCreators';
 
 const App = ({ user, dispatchLogoutAction }) => {
@@ -34,18 +37,27 @@ const App = ({ user, dispatchLogoutAction }) => {
           </Switch>
         ) : (
           <Switch>
-            <Route exact path='/publications' component={PublicationsPage} />
             <Route
               exact
-              path='/edit-publication'
+              path='/publication-trend'
+              component={PublicationTrendPage}
+            />
+            <Route
+              exact
+              path='/publication-listing'
+              component={PublicationsPage}
+            />
+            <Route
+              exact
+              path='/publication-createorupdate'
               component={EditPublicationPage}
             />
             <Route
               exact
-              path='/edit-publication/:publicationId'
+              path='/publication-createorupdate/:publicationId'
               component={EditPublicationPage}
             />
-            <Redirect to='/publications' />
+            <Redirect to='/publication-listing' />
           </Switch>
         )}
       </div>

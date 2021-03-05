@@ -56,7 +56,7 @@ const EditPublicationPage = ({
           data,
           () => {
             toast.success('Publication Updated Successfully!');
-            history.replace('/publications');
+            history.replace('/publication-listing');
           },
           (message) => toast.error(`Error: ${message}`)
         );
@@ -65,7 +65,7 @@ const EditPublicationPage = ({
           data,
           () => {
             toast.success('Publication Created Successfully!');
-            history.replace('/publications');
+            history.replace('/publication-listing');
           },
           (message) => toast.error(`Error: ${message}`)
         );
@@ -190,7 +190,7 @@ const EditPublicationPage = ({
               </button>
               <button
                 type='button'
-                onClick={() => history.replace('/publications')}
+                onClick={() => history.replace('/publication-listing')}
                 className='btn btn-secondary btn-lg'
               >
                 Cancel | <i className='fas fa-times' />

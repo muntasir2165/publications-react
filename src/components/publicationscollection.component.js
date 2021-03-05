@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import TotalPublicationTrend from './totalpublicationtrend.component';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
+
 import { deletePublicationById } from './../redux/actions/publicationsActionCreators';
 
 const PublicationsCollection = ({ publications, dispatchDeleteAction }) => {
@@ -30,7 +30,6 @@ const PublicationsCollection = ({ publications, dispatchDeleteAction }) => {
 
   return (
     <React.Fragment>
-      <TotalPublicationTrend publications={publications} />
       <table className='table table-hover'>
         <thead className='thead-dark'>
           <tr>
@@ -47,7 +46,7 @@ const PublicationsCollection = ({ publications, dispatchDeleteAction }) => {
           {publications.map((item) => (
             <tr key={item._id}>
               <td>
-                <Link to={`/edit-publication/${item._id}`}>
+                <Link to={`/publication-createorupdate/${item._id}`}>
                   {item.publicationType}
                 </Link>
               </td>
