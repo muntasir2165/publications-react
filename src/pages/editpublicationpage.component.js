@@ -77,7 +77,8 @@ const EditPublicationPage = ({
     !publicationType.trim() ||
     !title.trim() ||
     !authors.trim() ||
-    !creationDate.trim();
+    !creationDate.trim() ||
+    isNaN(new Date(creationDate));
 
   const updateErrorFlags = () => {
     const errorObj = {
@@ -89,7 +90,8 @@ const EditPublicationPage = ({
     if (!publicationType.trim()) errorObj.publicationType = true;
     if (!title.trim()) errorObj.title = true;
     if (!authors.trim()) errorObj.authors = true;
-    if (!creationDate.trim()) errorObj.creationDate = true;
+    if (!creationDate.trim() || isNaN(new Date(creationDate)))
+      errorObj.creationDate = true;
     setError(errorObj);
   };
 
@@ -181,7 +183,7 @@ const EditPublicationPage = ({
                   error.creationDate ? 'is-invalid' : ''
                 }`}
               />
-              <p className='invalid-feedback'>Required</p>
+              <p className='invalid-feedback'>Required (YYYY-MM-DD)</p>
             </div>
 
             <div className='mt-5'>

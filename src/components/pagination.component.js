@@ -10,6 +10,15 @@ const Pagination = ({ page, onPageChange, itemsTotal, itemsPerPage }) => {
           <button
             className='page-link'
             disabled={page <= 1}
+            onClick={() => onPageChange(1)}
+          >
+            First
+          </button>
+        </li>
+        <li className='page-item'>
+          <button
+            className='page-link'
+            disabled={page <= 1}
             onClick={() => onPageChange(page - 1)}
           >
             Previous
@@ -23,6 +32,18 @@ const Pagination = ({ page, onPageChange, itemsTotal, itemsPerPage }) => {
           >
             Next
           </button>
+        </li>
+        <li className='page-item'>
+          <button
+            className='page-link'
+            disabled={page >= totalPages()}
+            onClick={() => onPageChange(totalPages())}
+          >
+            Last
+          </button>
+        </li>
+        <li className='ml-4 my-auto'>
+          {page}/{totalPages()}
         </li>
       </ul>
     </nav>
