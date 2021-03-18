@@ -23,7 +23,7 @@
     "redux": "^4.0.5",
     "web-vitals": "^1.0.1"
   },
-  "homepage": "http://muntasir.github.io/publications-react",
+  "homepage": "https://muntasir2165.github.io/publications-react",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
